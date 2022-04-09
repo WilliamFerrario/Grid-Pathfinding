@@ -5,7 +5,7 @@ public class Move extends Grid implements MouseInputListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        mouseClicked = 1;
+
     }
 
     @Override
@@ -35,7 +35,6 @@ public class Move extends Grid implements MouseInputListener {
     @Override
     public void mouseDragged(MouseEvent e) {
         // TODO Auto-generated method stub
-        
     }
 
     

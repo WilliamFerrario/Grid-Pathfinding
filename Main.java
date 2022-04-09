@@ -12,5 +12,4 @@ public class Main implements Runnable{
             gui.repaint();
         }
     }
-
 }

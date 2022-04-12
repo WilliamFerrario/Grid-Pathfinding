@@ -5,6 +5,10 @@ public class Click extends Grid implements MouseInputListener{
 
     public static int[][] updatedBoard = Grid.getBoard();
     public static boolean goalButtonPressed = false;
+    public static boolean startButtonPressed = false;
+    public static int goalX, goalY;
+    public static int startX, startY;
+    
 
     int dragStartPointX = inCellX();
     int dragStartPointY = inCellY();
@@ -29,6 +33,10 @@ public class Click extends Grid implements MouseInputListener{
             if(goalButtonPressed == true){
                 updatedBoard[inCellX()][inCellY()] = 3;
                 goalButtonPressed = false;
+            }
+            else if(startButtonPressed == true){
+                updatedBoard[inCellX()][inCellY()] = 2;
+                startButtonPressed = false;
             }
             else if(updatedBoard[inCellX()][inCellY()] == 0){
                 updatedBoard[inCellX()][inCellY()] = 1;
@@ -71,9 +79,12 @@ public class Click extends Grid implements MouseInputListener{
             goalButtonPressed = false;
         }
 
-        //randomize all walls and goal state
-        if(mouseX >= 15 && mouseX < 228 && mouseY >= 285 && mouseY <  368){
-            //excecute
+        //set start state of algorithm
+        if(mouseX >= 15 && mouseX < 228 && mouseY >= 285 && mouseY <  368 && startButtonPressed == false){
+            startButtonPressed = true;
+        }
+        else if(mouseX >= 15 && mouseX < 228 && mouseY >= 285 && mouseY <  368){
+            startButtonPressed = false;
         }
 
     }
